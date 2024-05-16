@@ -82,11 +82,79 @@ static void mainmenu()
                 break;
             case "2":
                 {
+                    Console.WriteLine("");
+                    Console.WriteLine("1.minifigurer");
+                    Console.WriteLine("2.sets");
+                    Console.WriteLine("3.gå tillbaka");
+                    string ägerejval = Console.ReadLine();
+                    if (ägerejval == "1")
+                    {
+                        Minifigur.VisaMeny(minifigurer, lines, minifigurkatigorier);
+                    }
+                    else if (ägerejval == "2")
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("1.allt");
+                        Console.WriteLine("2.sök");
+                        Console.WriteLine("3.lega till");
+                        Console.WriteLine("4.ta bort");
+                        Console.WriteLine("5.gå tilbaka");
+                        string setval = Console.ReadLine();
+                        switch (setval)
+                        {
+                            case "1":
 
+                                break;
+                            case "2":
+
+                                break;
+                            case "3":
+
+                                break;
+                            case "4":
+
+                                break;
+                        }
+
+                    }
                 }
                 break;
             case "3":
+                Console.WriteLine("");
+                Console.WriteLine("1.minifigurer");
+                Console.WriteLine("2.sets");
+                Console.WriteLine("3.gå tillbaka");
+                string allaval = Console.ReadLine();
+                if (allaval == "1")
+                {
+                    Minifigur.VisaMeny(minifigurer, lines, minifigurkatigorier);
+                }
+                else if (allaval == "2")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("1.allt");
+                    Console.WriteLine("2.sök");
+                    Console.WriteLine("3.lega till");
+                    Console.WriteLine("4.ta bort");
+                    Console.WriteLine("5.gå tilbaka");
+                    string alltval = Console.ReadLine();
+                    switch (alltval)
+                    {
+                        case "1":
 
+                            break;
+                        case "2":
+
+                            break;
+                        case "3":
+
+                            break;
+                        case "4":
+
+                            break;
+                    }
+
+                }
 
 
                 break;
