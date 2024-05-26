@@ -24,7 +24,11 @@
                     string controlline = Console.ReadLine();
                     if (!lines.Any(line => line.Namn == controlline))
                     {
-                        var nyline = new Line { Id = 0, Namn = controlline };
+                        int nyttId = 0;
+                        if (lines.Count > 0)
+                            nyttId = lines.Max(line => line.Id) + 1;
+
+                        var nyline = new Line { Id = nyttId, Namn = controlline };
                         lines.Add(nyline);
                     }
                     break;

@@ -3,7 +3,7 @@ public class MinifigurKategori
 {
     public int Id { get; set; }
     public string Namn { get; set; }
-   public static void VisaMeny(List<MinifigurKategori> kategorier)
+    public static void VisaMeny(List<MinifigurKategori> kategorier)
     {
         var avsluta = false;
         while (true != avsluta)
@@ -25,8 +25,27 @@ public class MinifigurKategori
                     string controlminifigurkTIGORI = Console.ReadLine();
                     if (!kategorier.Any(katigori => katigori.Namn == controlminifigurkTIGORI))
                     {
-                        var nyKategori = new MinifigurKategori { Id = 0, Namn = controlminifigurkTIGORI };
-                        kategorier.Add(nyKategori);
+                        if (kategorier.Count > 0)
+                        {
+                            var nyKategori = new MinifigurKategori
+                            {
+                                Id = kategorier.Max(kategori=>kategori.Id)+1
+                            ,
+                                Namn = controlminifigurkTIGORI
+                            };
+                            kategorier.Add(nyKategori);
+                        }
+                        else
+                        {
+                            var nyKategori = new MinifigurKategori
+                            {
+                                Id = 0
+                                                      ,
+                                Namn = controlminifigurkTIGORI
+                            };
+                            kategorier.Add(nyKategori);
+                        }
+
                     }
                     break;
                 case "2":

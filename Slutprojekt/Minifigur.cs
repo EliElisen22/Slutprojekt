@@ -53,8 +53,7 @@ public class Minifigur
 
 
                     }
-
-                    else { break; }
+                    break;
                 }
 
                 if (ut == 1)
@@ -74,6 +73,12 @@ public class Minifigur
                     }
                     Console.WriteLine("");
                     Console.WriteLine("det fins ingen sådan line");
+                    Console.WriteLine("desa lines fins: ");
+                    foreach (var line in lines)
+                    {
+                        Console.WriteLine(line.Namn);
+
+                    }
 
                 }
                 while (true)
@@ -101,14 +106,29 @@ public class Minifigur
                     }
 
                 }
-
-                minifigurer.Add(new Minifigur
+                if (lines.Count > 0)
                 {
-                    Id=minifigurer.Max(mf=>mf.Id) + 1,
-                    lineId = lineId,
-                    Minifigurkatigorier = minifigurskategorier,
-                    Namn = gubnamn
-                });
+                    minifigurer.Add(new Minifigur
+                    {
+
+                        Id = minifigurer.Max(mf => mf.Id) + 1,
+                        lineId = lineId,
+                        Minifigurkatigorier = minifigurskategorier,
+                        Namn = gubnamn
+                    });
+                }
+                else
+                {
+                    minifigurer.Add(new Minifigur
+                    {
+
+                        Id = 0,
+                        lineId = lineId,
+                        Minifigurkatigorier = minifigurskategorier,
+                        Namn = gubnamn
+                    });
+                }
+
                 break;
             case "4":
 
